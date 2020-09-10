@@ -1,0 +1,32 @@
+
+@model List<Step>
+@{
+    ViewData["Title"] = "All Steps";
+}
+
+<div>
+    <br>
+    <h3>@ViewData["Title"]</h3>
+    <br>
+    <div id="faultCode-table-holder">
+        <table id="faultCode-table" class="table-striped table table-bordered">
+            <tr>
+                <th>Number</th>
+                <th>Code</th>
+                <th>Step Description</th>
+            </tr>
+        
+            @foreach (var step in Model) { 
+                <tr>
+                    <td>@step.Number</td>
+                    <td>@step.Code</td>
+                    <td>@step.StepDescription</td>
+                    
+                    @* <td><a asp-action="Details" asp-route-id="@faultCode.Code" >Details</a></td> *@
+                </tr>
+            }
+
+        </table>
+        
+    </div>
+</div>

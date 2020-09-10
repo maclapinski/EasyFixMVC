@@ -1,0 +1,287 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+  /* margin-left: 23%; */
+  display: block;
+  
+
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color:white;
+  border-radius: .3rem;
+  text-align: center;
+}
+
+.btn-success {
+  margin-right: 20px !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding-left: 20px;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+.card-body-index {
+  
+  min-width: 355px;
+  padding-block: 5%;
+}
+
+.card-index{
+  max-width: 220px;
+  text-align: center;
+}
+.h4-card{
+  text-align: center;
+  padding-top: 5%;
+}
+.card-columns{
+
+text-align: center;
+margin-top: 20px;
+margin: auto;
+max-width: 1050px;
+}
+
+.form-group{
+  margin-bottom: 20px;
+  max-width: 360px;
+}
+.pick-code-container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 360px; 
+}
+.container{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.card-dishwasher{
+  min-width: 355px;
+  padding-block: 5%;
+}
+.container-apliance{
+  margin-top: 40px;
+}
+@media (min-width: 340px) {
+  .container-apliance {
+    max-width: 358px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container-apliance {
+    max-width: 540px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-apliance {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-apliance {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-apliance {
+    max-width: 1140px;
+    
+  }
+}
+.w3-col.m1 {
+  width: 33.3% !important;
+  min-width: min-content;
+}
+.w3-center {
+  text-align: center !important;
+}
+.w3-col, .w3-half, .w3-third, .w3-twothird, .w3-threequarter, .w3-quarter {
+  
+  width: 100%;
+  float: right;
+}
+@media (min-width: 340px) {
+  .w3-col.m1 {
+    max-width: 358px;
+    padding-left: 23%;
+    
+  }
+}
+
+@media (min-width: 576px) {
+  .w3-col.m1 {
+    max-width: 540px;
+    padding-left: 20%;
+    padding-right: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .w3-col.m1 {
+    max-width: 720px;
+    padding-left: 15%;
+  }
+}
+
+@media (min-width: 992px) {
+  .w3-col.m1 {
+    max-width: 960px;
+    padding-left: 0%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .w3-col.m1 {
+    max-width: 1140px;
+    
+  }}
+
+  .icon {
+    padding-bottom: 25px;
+  }
+  
+
+a {
+  text-decoration: none !important;
+}
+
+.btn-info {
+  margin-right: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+
+.btn-warning {
+  color: #ffc107 !important;
+  background-color: white !important;
+  border-color: #ffc107;
+  margin-right: 3%;
+}
+
+.btn-warning:hover {
+  color: #ffffff !important;
+  background-color: #e0a800 !important;
+  border-color: #d39e00;
+}
+
+/* .card-index {
+  background-color: white !important;
+} */
+.card-index:hover {
+  background-color: #83c5be !important;
+}
+
+/* .card-body:hover {
+  background-color: #83c5be !important;
+
+} */
+
+.card-index {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.table
+
+.jumbotron
+{
+  background-color: white !important;
+  text-align: center;
+}
+
+.pb-3, .py-3 {
+  padding-bottom: 1rem!important;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+@media (min-width: 576px) {
+  #admin-dropdown{
+  margin-left:auto;
+  }
+}
+
+.card{
+   border: 1px solid white !important;
+}
+
+.card-deck .card {
+  margin-bottom: 15px;
+  min-width: 300px !important;
+}
+

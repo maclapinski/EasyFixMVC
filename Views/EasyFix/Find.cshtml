@@ -1,0 +1,30 @@
+@model CustomModel
+@{
+    ViewData["Title"] = "Find Code";
+}
+
+<div>
+    <h3>@ViewData["Title"]</h3>
+    <hr>
+    <div id="faultCode-form-holder" class="well">
+      
+        <form id="faultCode-form" asp-action="Find"> 
+            <div class="form-group">
+            <select class="form-control col-12 col-sm-12 col-md-12" asp-for="Code">
+                    @foreach (var faultCode in Model.FaultCodeList) { 
+                    
+                        <option>@faultCode.Code</option>
+                    }
+            </select>
+            </div>
+            <hr>
+            <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="FaultCodeList">
+            @* <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="StepNumber"> *@
+            <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="Code">
+            @* <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="StepList"> *@
+            <input type="button" class="btn btn-success" value="Back" onclick="history.go(-2);return false;">
+            <button type="submit" id="form-submit" class="btn btn-success">Next</button>
+        </form>
+    </div>
+
+</div>

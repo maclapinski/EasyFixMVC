@@ -1,0 +1,17 @@
+@model Comment
+
+<h3>New Comment</h3><br>
+        <form asp-action="CreateComment">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" asp-for="Username">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Comment</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" asp-for="CommentText"></textarea>
+            </div>
+
+            <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="Code">
+            <button type="submit" id="form-submit" class="btn btn-success">Save</button>
+        </form>

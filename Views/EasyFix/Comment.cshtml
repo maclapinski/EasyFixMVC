@@ -1,0 +1,21 @@
+@model Comment
+<br>
+<div>
+    <h3>Your New Comment on @Model.Code Fault Code</h3>
+       <div id="faultCode-table-holder">
+          <table id="faultCode-table" class="table-striped table table-bordered" >
+                    <tr>
+                        <th>Name</th>
+                        <th>Comment</th>
+                        
+                    </tr>
+            
+                        <tr>
+                            <td>@Model.Username</td>
+                            <td>@Model.CommentText</td>
+                        </tr>     
+            </table>  
+            <br>
+            <input type="button" class="btn btn-success" value="Back to Troubleshooting" onclick="history.go(-2);return false;">
+        </div>
+</div>

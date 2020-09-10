@@ -1,0 +1,46 @@
+@model CustomModel
+@{
+    ViewData["Title"] = "Delete Fault Code";
+}
+<br>
+<br> 
+<div class="pick-code-container">
+  <form id="faultCode-form" asp-action="DeleteFaultCode"> 
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Brand</label>
+    <select class="form-control col-12 col-sm-12 col-md-12" id="exampleFormControlSelect1" asp-for="Brand">
+      @{ var brandList = new List<string>(); 
+      foreach (var brand in Model.FaultCodeList) 
+        { 
+          var brandString = brand.Brand.ToString();
+          
+          if(brandList.Contains(brandString) != true)
+          {
+            brandList.Add(brandString);
+          }         
+        } 
+        foreach( var brandName in brandList)
+        {
+          <option>@brandName</option>
+        }
+      }
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Fault Code</label>
+      <select class="form-control col-12 col-sm-12 col-md-12" id="exampleFormControlSelect1" asp-for="Code">
+
+        @foreach (var faultCode in Model.FaultCodeList) 
+        { 
+                      
+        <option>@faultCode.Code</option>
+        }
+      </select>
+    </div>
+    <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="FaultCodeList">
+    <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="Code">
+    <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="Brand"> 
+    <input type="button" class="btn btn-success" value="Back" onclick="history.go(-1);return false;">
+    <button type="submit" id="form-submit" class="btn btn-success">Next</button>
+  </form>    
+</div>

@@ -1,0 +1,30 @@
+﻿
+@model List<FaultCode>
+@{
+    ViewData["Title"] = "All Codes";
+}
+
+<div>
+    <br>
+    <h3>@ViewData["Title"]</h3>
+    <br>
+    <div id="faultCode-table-holder">
+        <table id="faultCode-table" class="table-striped table table-bordered">
+            <tr>
+                <th>Brand</th>
+                <th>Code</th>
+                <th>Description</th>
+            </tr>
+        
+            @foreach (var faultCode in Model) { 
+                <tr>
+                    <td>@faultCode.Brand</td>
+                    <td>@faultCode.Code</td>
+                    <td>@faultCode.Description</td>
+                </tr>
+            }
+
+        </table>
+        
+    </div>
+</div>

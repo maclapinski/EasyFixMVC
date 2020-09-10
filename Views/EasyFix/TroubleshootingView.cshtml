@@ -1,0 +1,52 @@
+@model CustomModel2
+@{
+int stepCount = 0;
+}
+
+<div>
+    <h3>@ViewData["Title"]</h3>
+    <form asp-action="Troubleshooting"> 
+            <table class="table table-bordered" >
+
+                <h3>@Model.Code Troubleshooting</h3><br> 
+                <tr> 
+                    <th>Step # @Model.StepNumber</th>    
+                </tr>
+                @* @{int stepCount = 0;} *@
+            
+                @foreach(var step in Model.StepList){
+                    if(Model.Code == step.Code){
+                        stepCount++ ;
+                    }
+                }
+                @foreach(var step in Model.StepList){   
+                    if(Model.Code == step.Code && step.Number == Model.StepNumber)
+                    {
+                    <tr>
+                    <td>@step.StepDescription</td>
+                    </tr>
+                    }                       
+                }                   
+            </table>              
+            <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="StepNumber">
+            <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="Code">
+            <input type="button" class="btn btn-success" value="Back" onclick="history.go(-1);return false;">
+            @{
+                if(Model.StepNumber < stepCount)
+                {
+                <button type="submit" id="form-submit" class="btn btn-success">Next Step</button>
+                }
+                else
+                {
+                    <button type="submit" id="form-submit" class="btn btn-success" asp-area="" asp-controller="EasyFix" asp-action="Index">Back To Main Page</button>
+                }   
+            } 
+    </form>
+    <form asp-action="CreateComment"> 
+            
+            <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="Code">
+    </form>
+    <br>
+    <a class="btn btn-info" asp-action="Comments" asp-route-Code="@Model.Code">Comments on @Model.Code Fault Code</a>
+    <a class="btn btn-info" asp-action="CreateComment" asp-route-Code="@Model.Code">Create Comment</a>
+</div>

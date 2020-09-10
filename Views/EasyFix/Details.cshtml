@@ -1,0 +1,35 @@
+@model CustomModel
+@{
+    ViewData["Title"] = "Fault Code Details";
+}
+
+<div>
+    <br>
+    <h3>@Model.Code Fault Code Details</h3>
+    <br>
+    <div>
+        <form asp-action="Troubleshooting">              
+            @{bool foundCode = false;}
+            @foreach(var code in Model.FaultCodeList)
+            {
+                if(Model.Code == code.Code && Model.Brand == code.Brand)
+                { foundCode = true;
+                <p> @code.Description </p> <br>
+                }   
+            }
+            @{
+            if(foundCode == true)
+                {
+                    <input type="hidden"  class="form-control col-12 col-sm-12 col-md-12" asp-for="Code">
+                    <input type="button" class="btn btn-success" value="Back" onclick="history.go(-1);return false;">
+                    <button type="submit" id="form-submit" class="btn btn-success">Troubleshooting</button>   
+                }
+                else
+                {
+                    <p>FaultCode @Model.Code was not found in the @Model.Brand fault code database. Check your code.</p>
+                    <input type="button" class="btn btn-success" value="Back" onclick="history.go(-1);return false;">
+                }
+            }    
+        </form> 
+    </div>
+</div>

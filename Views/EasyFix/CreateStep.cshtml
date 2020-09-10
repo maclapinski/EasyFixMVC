@@ -1,0 +1,30 @@
+@model Step
+@{
+    ViewData["Title"] = "Create Step";
+}
+
+<div>
+    <h3>@ViewData["Title"]</h3>
+
+    <div id="faultCode-form-holder" class="well">
+        <form id="faultCode-form" asp-action="CreateStep"> 
+            
+            <div class="form-group">
+                <label asp-for="Number">Number:</label>
+                <input type="text" asp-for="Number" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Code">Code:</label>
+                <input type="text" asp-for="Code" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StepDescription">Step Description:</label>
+                <textarea type="text" asp-for="StepDescription" class="form-control"></textarea>
+            </div>
+            <button type="submit" id="form-submit" class="btn btn-success">Add Step</button>
+        </form>
+    </div>
+
+</div>

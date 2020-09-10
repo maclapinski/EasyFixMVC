@@ -1,0 +1,194 @@
+﻿// using System;
+// using System.Collections.Generic;
+// using System.Diagnostics;
+// using System.Linq;
+// using System.Threading.Tasks;
+// using Microsoft.AspNetCore.Mvc;
+// using Microsoft.Extensions.Logging;
+// using EasyFixMVC.Models;
+
+// namespace EasyFixMVC.Controllers
+// {
+
+
+//     public class EasyFixController : Controller
+//     {
+//         List<FaultCode> _faultCodeList;
+//         List<Step> _stepList;
+//         List<Comment> _commentList;      
+
+//         public EasyFixController(List<FaultCode> faultCodeList, List<Step> stepList, List<Comment> commentList)
+//         {
+//             _faultCodeList = faultCodeList;
+//             _stepList = stepList;
+//             _commentList = commentList;
+//         }
+
+        
+
+
+
+
+//         public IActionResult Index()
+//         {
+            
+
+//             return View(_faultCodeList);
+//         }
+
+//         public IActionResult Index2()
+//         {
+            
+
+//             return View();
+//         }
+
+//         public IActionResult Index3()
+//         {
+            
+
+//             return View();
+//         }
+
+//          public IActionResult Dishwasher() {
+//             var myCustomModel = new CustomModel();
+//             myCustomModel.FaultCodeList = _faultCodeList;
+//             // myCustomModel.StepList = _stepList;
+//             myCustomModel.Code = "";
+//             return View(myCustomModel);
+//         }
+
+//         [HttpPost]
+//         public IActionResult Dishwasher(CustomModel model) {
+//                 model.FaultCodeList = _faultCodeList;
+//                 // model.StepList = _stepList;
+//                 //var targetCode = model.Code;
+
+//                 //ViewBag.Editing = true;
+//                 //var faultCode = GetByCode(id);
+//                 return RedirectToAction("Details", model);
+//             }
+
+//         public IActionResult TroubleshootingView(CustomModel2 model)
+//         {                         
+//                 // model.FaultCodeList = _faultCodeList;
+//                 model.StepList = _stepList;    
+//             return View(model);
+//         }
+
+//         [HttpPost]
+//         public IActionResult Troubleshooting(CustomModel2 model) {
+                
+//                 // model.FaultCodeList = _faultCodeList;
+//                 model.StepList = _stepList;   
+//                 model.StepNumber++;
+//                 return RedirectToAction("TroubleshootingView", model);
+//         }
+
+        
+//         [HttpPost]
+//         public IActionResult CreateComment(Comment newComment) {
+                
+//                 // var comment = new Comment();
+//                 newComment.Id = Guid.NewGuid();
+//                 _commentList.Add(newComment);
+                 
+
+//                 return RedirectToAction("Comment", newComment);
+//         }
+
+//         //  [HttpPost]
+//         // public IActionResult CreateComment(CustomModelComment model) {
+                
+//         //         var comment = new Comment();
+//         //         comment.Id = Guid.NewGuid();
+//         //         comment.Code = model.Code;
+//         //         comment.Username = model.Username;
+//         //         comment.CommentText = model.CommentText;
+//         //         _commentList.Add(comment);
+//         //         model.CommentList = _commentList;  
+
+//         //         return RedirectToAction("Comments", model);
+//         // }
+
+//           public IActionResult CreateComment(string Code) {
+                
+//                 return View();
+//         }
+
+//           public IActionResult Comment(Comment newComment)
+//         {
+
+//             return View(newComment);
+//         }
+
+//         public IActionResult Comments(string code) {
+//             var list = GetByCode(code);
+//             return View(list);
+//         }
+//         public IActionResult Create() {
+//             return View();
+//         }
+        
+//         [HttpPost]
+//         public IActionResult Create(FaultCode myNewFaultCode)
+//         {
+//             myNewFaultCode.Id = Guid.NewGuid();
+//             _faultCodeList.Add(myNewFaultCode);
+//             return RedirectToAction("Index");
+//         }
+//         public IActionResult Find() {
+//             var myCustomModel = new CustomModel();
+//             myCustomModel.FaultCodeList = _faultCodeList;
+//             // myCustomModel.StepList = _stepList;
+//             myCustomModel.Code = "";
+//             return View(myCustomModel);
+//         }
+
+//         [HttpPost]
+//         public IActionResult Find(CustomModel model) {
+//                 model.FaultCodeList = _faultCodeList;
+//                 // model.StepList = _stepList;
+//                 //var targetCode = model.Code;
+
+//                 //ViewBag.Editing = true;
+//                 //var faultCode = GetByCode(id);
+//                 return RedirectToAction("Details", model);
+//             }
+
+//         public IActionResult Details(CustomModel model) {
+//                 model.FaultCodeList = _faultCodeList;
+//                 // model.StepList = _stepList;
+//                 // var faultCode = GetByCode(id);
+//                 return View(model);
+//             }
+
+        
+//         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+//         public IActionResult Error()
+//         {
+//             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+//         }
+
+//         private List<Comment> GetByCode(string code) {
+            
+//             var listOfComments = new List<Comment>();
+            
+//             foreach (var comment in _commentList) { 
+//                 if (code == comment.Code)
+//                 {
+//                     listOfComments.Add(comment);
+                    
+//                 }
+ 
+//             }
+
+//             if (listOfComments == null){
+//                 throw new Exception("No comments found");
+//             }
+
+//             return listOfComments;
+//         }
+    
+//     }
+// }
